@@ -1,3 +1,8 @@
+##### The link to my geoprocessing service is: http://qilin.geog.uw.edu:6080/arcgis/rest/services/hardyw7/ReclassVectorWooldridge7/GPServer ########
+##### the name of the geoprocessing service is: ReclassVectorWooldridge7
+##### I was unable to update my original service and so I ended up with more than one version
+
+
 import arcpy
 
 #set environment workspace and overwrite functions
@@ -44,3 +49,8 @@ with arcpy.da.UpdateCursor(outputFC,[inField,outField]) as cursor:
             row[1] = notfoundvalue
             cursor.updateRow(row)
 
+
+			
+			
+######### I talked with Amanda at the very end of my assignment because my tool would run locally but not as a geoprocessing service
+######### she suggested changing the parameter type for the lookup table from 'Table' to 'Dataset'
